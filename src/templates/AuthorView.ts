@@ -2,63 +2,22 @@ import { render as baseView } from './BaseView';
 
 export function render(url: string): string {
   const view = `
-    <h2>Enter a secret</h2>
-    <form action='${url}' method='POST'>
-      <label for=secret>Secret</label>
+    <div class="wrapper">
+      <h1>Share a secret</h1>
+      <form action='${url}' method='POST'>
+      <label for=secret>Secret:</label>
       <br>
-      <textarea rows=20 cols=80 name="secret"></textarea>
+      <textarea class="form-control" name="secret" style="width: 75%" id="exampleFormControlTextarea1" rows="3"></textarea>
       <br>
-      <label for=ttl>Expires after milliseconds</label>
+      <div class="alert alert-primary" role="alert">
+         Generated link will expire in 3 hours!
+      </div>
       <br>
-      <input type="number" name="ttl" value=900000 min=0 max=2147483647>
-      <br>
-      <input type="submit" value="Submit">
-    </form>
-    <br>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th>Milliseconds</th>
-          <th>Same as</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>60000</td>
-          <td>1 minute</td>
-        </tr>
-        <tr>
-          <td>900000</td>
-          <td>15 minutes</td>
-        </tr>
-        <tr>
-          <td>3600000</td>
-          <td>1 hour</td>
-        </tr>
-        <tr>
-          <td>28800000</td>
-          <td>8 hours</td>
-        </tr>
-        <tr>
-          <td>86400000</td>
-          <td>1 day</td>
-        </tr>
-        <tr>
-          <td>604800000</td>
-          <td>7 day</td>
-        </tr>
-        <tr>
-          <td>2147483647</td>
-          <td>
-              24.8 days, <br>
-              NodeJS upper limit on delay time. <br>
-              Exceeding value causes node to execute <br>
-              in 1 ms
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  `.trim();
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  
+  <br>
+  </div>
+`.trim();
   return baseView(view);
 }
