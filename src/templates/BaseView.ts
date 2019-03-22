@@ -2,6 +2,7 @@ export function render(body: string): string {
   return `
   <!doctype html>
   <head>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="utf-8">
@@ -73,11 +74,19 @@ export function render(body: string): string {
   padding: 10px;
   margin: 0;
 }
+.t1 {
+  display: inline-block;
+  color: white;
+  padding-top: 5px;
+  padding-left: 5px;
+
+}
   </style>
   <body>
     <nav class="navbar navbar-light">
-      <a class="navbar-brand" href="#">
-        <img src="https://bit.ly/2Hwj9I4" width="200" height="" class="d-inline-block align-top" alt="">
+      <a class="navbar-brand" href="./share">
+        <i class='fas fa-fingerprint d-inline-block align-top' alt="" style='font-size:48px;color:White'></i>
+        <h2 class="t1" >T1-SOLUTION<h2>
       </a>
     </nav>
     ${body}

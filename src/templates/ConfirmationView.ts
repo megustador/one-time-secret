@@ -23,7 +23,7 @@ export function render(secretUrl: string): string {
     <textarea id="textarea" class="form-control" name="secret" style="width: 100%" id="exampleFormControlTextarea1" rows="3" readonly>${secretUrl}</textarea>
     <div class="buttons">
       <button class="btn btn-primary" type="button" onclick="copy()">Copy to clipboard</button>
-      <a href="./new">
+      <a href="./share">
       <button type="button" class="btn btn-secondary">Go Back</button>
       </a>
     </div>
